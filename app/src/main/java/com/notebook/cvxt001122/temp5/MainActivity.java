@@ -28,25 +28,36 @@ public class MainActivity extends AppCompatActivity {
         recyclerView=findViewById(R.id.recycler_view);
         layoutManager=new LinearLayoutManager(this);
         data=new ArrayList<>();
+        ArrayList<ImageModel> imageModels=new ArrayList<>();
+        imageModels.add(new ImageModel(R.drawable.anshika1,"Rashmika" ));
+        imageModels.add(new ImageModel(R.drawable.anshika2,"Rashmika" ));
+        imageModels.add(new ImageModel(R.drawable.anshika3,"Rashmika" ));
+        imageModels.add(new ImageModel(R.drawable.anupma,"Anupma" ));
+        imageModels.add(new ImageModel(R.drawable.anupma1,"Anupma" ));
+        imageModels.add(new ImageModel(R.drawable.anupma2,"Anupma" ));
+        imageModels.add(new ImageModel(R.drawable.anupma3,"Anupma" ));
+
+
+        data.add(new TitleModel("south actress", "more"));
+        data.add(imageModels);
         data.add(new TitleModel("south Actress","more" ));
-        data.add(new ImageModel(R.drawable.anshika1,"Rashmika" ));
+        data.add(imageModels);
         data.add(new TitleModel("south actress", "more"));
-        data.add(new ImageModel(R.drawable.anshika2,"Rashmika" ));
+        data.add(imageModels);
         data.add(new TitleModel("south actress", "more"));
-        data.add(new ImageModel(R.drawable.anshika3,"Rashmika" ));
+        data.add(imageModels);
         data.add(new TitleModel("south actress", "more"));
-        data.add(new ImageModel(R.drawable.anupma,"Anupma" ));
+        data.add(imageModels);
         data.add(new TitleModel("south actress", "more"));
-        data.add(new ImageModel(R.drawable.anupma1,"Anupma" ));
+        data.add(imageModels);
         data.add(new TitleModel("south actress", "more"));
-        data.add(new ImageModel(R.drawable.anupma2,"Anupma" ));
+        data.add(imageModels);
         data.add(new TitleModel("south actress", "more"));
-        data.add(new ImageModel(R.drawable.anupma3,"Anupma" ));
-        data.add(new TitleModel("south actress", "rashmika"));
+        data.add(imageModels);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        RecyclerAdapter adapter=new RecyclerAdapter(data);
+        RecyclerAdapter adapter=new RecyclerAdapter(data,this);
 
         recyclerView.setAdapter(adapter);
 
