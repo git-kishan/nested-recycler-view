@@ -1,8 +1,8 @@
 package com.notebook.cvxt001122.temp5;
 
 public class TitleModel {
-    String title;
-    String more;
+    private String title;
+    private String more;
 
     public TitleModel(String title,String more){
         this.title=title;

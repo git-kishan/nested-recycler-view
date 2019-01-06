@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class VerticalRecyclerAdapter extends RecyclerView.Adapter {
     private LayoutInflater inflater;
-    private ArrayList<TitleModel> data;
-    public VerticalRecyclerAdapter(ArrayList<TitleModel> data){
+    private TitleModel data;
+    public VerticalRecyclerAdapter(TitleModel data){
         this.data=data;
     }
     @NonNull
@@ -27,13 +27,13 @@ public class VerticalRecyclerAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
         if(holder instanceof TextViewHolder){
-            ((TextViewHolder) holder).title.setText(data.get(position).getTitle());
-            ((TextViewHolder) holder).more.setText(data.get(position).getMore());
+            ((TextViewHolder) holder).title.setText(data.getTitle());
+            ((TextViewHolder) holder).more.setText(data.getMore());
         }
     }
 
     @Override
     public int getItemCount() {
-        return data.size();
+        return 1;
     }
 }

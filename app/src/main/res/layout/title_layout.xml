@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:layout_height="40dp"
     android:weightSum="100">
 
 
@@ -13,13 +13,13 @@
         android:id="@+id/title"
         android:layout_width="114dp"
         android:layout_height="23dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="south indian"
-        android:textSize="20sp"
-        android:textColor="@android:color/black"
-        android:gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:text="south indian"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -27,8 +27,8 @@
         android:id="@+id/more"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:text="More"
         android:textColor="@android:color/holo_red_dark"
         app:layout_constraintBottom_toBottomOf="parent"

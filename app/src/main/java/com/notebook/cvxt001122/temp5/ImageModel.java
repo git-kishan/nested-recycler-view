@@ -1,8 +1,8 @@
 package com.notebook.cvxt001122.temp5;
 
 public class ImageModel {
-    int imageId;
-    String name;
+    private int imageId;
+    private String name;
 
     public ImageModel(int imageId,String name){
         this.imageId=imageId;

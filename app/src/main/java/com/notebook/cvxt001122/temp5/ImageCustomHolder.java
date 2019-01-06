@@ -18,4 +18,6 @@ public class ImageCustomHolder extends RecyclerView.ViewHolder {
         image=itemView.findViewById(R.id.image);
         name=itemView.findViewById(R.id.name);
     }
+
+    interface
 }

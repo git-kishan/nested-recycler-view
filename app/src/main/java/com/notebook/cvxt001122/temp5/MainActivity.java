@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayoutManager layoutManager;
     private Toolbar toolbar;
     private List<Object> data;
+    private ArrayList<ImageModel> reverseImageModels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         layoutManager=new LinearLayoutManager(this);
         data=new ArrayList<>();
         ArrayList<ImageModel> imageModels=new ArrayList<>();
+        reverseImageModels=new ArrayList<>();
         imageModels.add(new ImageModel(R.drawable.anshika1,"Rashmika" ));
         imageModels.add(new ImageModel(R.drawable.anshika2,"Rashmika" ));
         imageModels.add(new ImageModel(R.drawable.anshika3,"Rashmika" ));
@@ -37,23 +39,32 @@ public class MainActivity extends AppCompatActivity {
         imageModels.add(new ImageModel(R.drawable.anupma2,"Anupma" ));
         imageModels.add(new ImageModel(R.drawable.anupma3,"Anupma" ));
 
+        reverseImageModels=reverseList(imageModels);
 
         data.add(new TitleModel("south actress", "more"));
         data.add(imageModels);
+
         data.add(new TitleModel("south Actress","more" ));
-        data.add(imageModels);
+        data.add(reverseImageModels);
+
         data.add(new TitleModel("south actress", "more"));
         data.add(imageModels);
+
+        data.add(new TitleModel("south actress", "more"));
+        data.add(reverseImageModels);
+
         data.add(new TitleModel("south actress", "more"));
         data.add(imageModels);
+
+        data.add(new TitleModel("south actress", "more"));
+        data.add(reverseImageModels);
+
         data.add(new TitleModel("south actress", "more"));
         data.add(imageModels);
+
         data.add(new TitleModel("south actress", "more"));
-        data.add(imageModels);
-        data.add(new TitleModel("south actress", "more"));
-        data.add(imageModels);
-        data.add(new TitleModel("south actress", "more"));
-        data.add(imageModels);
+        data.add(reverseImageModels);
+
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -67,5 +78,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private ArrayList<ImageModel> reverseList(ArrayList<ImageModel> imageModels){
+
+        int k=0;
+        for(int i=imageModels.size()-1;i>=0;i--){
+            reverseImageModels.add(imageModels.get(i));
+        }
+        return reverseImageModels;
     }
 }

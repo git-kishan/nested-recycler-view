@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class HorizontalRecyclerAdapter extends RecyclerView.Adapter {
 
     private ArrayList<ImageModel> data;
-    LayoutInflater inflater;
+    private LayoutInflater inflater;
     public HorizontalRecyclerAdapter(ArrayList<ImageModel> data){
         this.data=data;
     }

@@ -15,11 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerAdapter extends RecyclerView.Adapter {
 
-    Context context;
-    List<Object> data;
+    private  Context context;
+    private List<Object> data;
     private final int VERTICAL=1;
     private final int HORIZONTAL=2;
-    LayoutInflater inflater;
+    private LayoutInflater inflater;
     public RecyclerAdapter (List<Object> data, Context context){
         this.data=data;
         this.context=context;
@@ -60,7 +60,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
         }
         if(holder.getItemViewType()==VERTICAL && holder instanceof VerticalViewHolder){
             VerticalRecyclerAdapter adapter=new VerticalRecyclerAdapter(
-                    (ArrayList<TitleModel>) data.get(position));
+                    (TitleModel) data.get(position));
             ((VerticalViewHolder) holder).recyclerView.setLayoutManager(new LinearLayoutManager(
                     context));
             ((VerticalViewHolder) holder).recyclerView.setAdapter(adapter);
