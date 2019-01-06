@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ImageCustomHolder extends RecyclerView.ViewHolder {
 
-    private ImageView image;
-    private TextView name;
+     ImageView image;
+     TextView name;
 
 
     public ImageCustomHolder(@NonNull View itemView) {

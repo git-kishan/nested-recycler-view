@@ -2,6 +2,7 @@ package com.notebook.cvxt001122.temp5;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,15 +32,26 @@ public class MainActivity extends AppCompatActivity {
         data.add(new ImageModel(R.drawable.anshika1,"Rashmika" ));
         data.add(new TitleModel("south actress", "more"));
         data.add(new ImageModel(R.drawable.anshika2,"Rashmika" ));
-        data.add(new TitleModel("south actress", "rashmika"));
+        data.add(new TitleModel("south actress", "more"));
         data.add(new ImageModel(R.drawable.anshika3,"Rashmika" ));
-        data.add(new TitleModel("south actress", "rashmika"));
-
-        data.add(new TitleModel("south Actress","more" ));
+        data.add(new TitleModel("south actress", "more"));
         data.add(new ImageModel(R.drawable.anupma,"Anupma" ));
         data.add(new TitleModel("south actress", "more"));
-        data.add(new ImageModel(R.drawable.anshika2,"Rashmika" ));
+        data.add(new ImageModel(R.drawable.anupma1,"Anupma" ));
+        data.add(new TitleModel("south actress", "more"));
+        data.add(new ImageModel(R.drawable.anupma2,"Anupma" ));
+        data.add(new TitleModel("south actress", "more"));
+        data.add(new ImageModel(R.drawable.anupma3,"Anupma" ));
         data.add(new TitleModel("south actress", "rashmika"));
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        RecyclerAdapter adapter=new RecyclerAdapter(data);
+
+        recyclerView.setAdapter(adapter);
+
+
+
 
 
 
