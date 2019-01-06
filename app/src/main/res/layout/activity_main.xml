@@ -9,9 +9,11 @@
 
    <com.google.android.material.appbar.AppBarLayout
        android:layout_width="match_parent"
+
        android:layout_height="wrap_content">
        <androidx.appcompat.widget.Toolbar
            android:id="@+id/toolbar"
+           app:layout_scrollFlags="enterAlways|exitUntilCollapsed"
            android:layout_width="match_parent"
            android:layout_height="?attr/actionBarSize"
            android:background="@color/colorPrimary"
@@ -23,8 +25,14 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
+        android:nestedScrollingEnabled="true"
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp">
 
     </androidx.recyclerview.widget.RecyclerView>
+    <ImageView
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:id="@+id/zoom_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

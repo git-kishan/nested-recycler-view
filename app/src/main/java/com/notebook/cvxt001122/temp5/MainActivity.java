@@ -6,13 +6,24 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.graphics.Point;
+import android.graphics.Rect;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  implements ClickListener{
 
 
     private RecyclerView recyclerView;
@@ -20,12 +31,18 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private List<Object> data;
     private ArrayList<ImageModel> reverseImageModels;
+     ImageView expandedImageView;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("nested recycler view");
+        expandedImageView=findViewById(R.id.zoom_image);
         recyclerView=findViewById(R.id.recycler_view);
         layoutManager=new LinearLayoutManager(this);
         data=new ArrayList<>();
@@ -78,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     }
 
     private ArrayList<ImageModel> reverseList(ArrayList<ImageModel> imageModels){
@@ -88,4 +106,22 @@ public class MainActivity extends AppCompatActivity {
         }
         return reverseImageModels;
     }
+
+    @Override
+    public void itemClicked(View view, String name, int position) {
+
+        Toast.makeText(this, name+" is clicked",Toast.LENGTH_SHORT ).show();
+        Log.i("TAG","after but inside itemclicked" );
+
+
+    }
+
+    @Override
+    public void itemClicked(View view, String more) {
+        Toast.makeText(this,more +" is clicked" , Toast.LENGTH_SHORT).show();
+    }
+
+
+
+
 }

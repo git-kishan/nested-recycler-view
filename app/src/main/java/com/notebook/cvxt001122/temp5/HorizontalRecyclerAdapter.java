@@ -13,15 +13,17 @@ public class HorizontalRecyclerAdapter extends RecyclerView.Adapter {
 
     private ArrayList<ImageModel> data;
     private LayoutInflater inflater;
-    public HorizontalRecyclerAdapter(ArrayList<ImageModel> data){
+    ClickListener listener;
+    public HorizontalRecyclerAdapter(ArrayList<ImageModel> data,ClickListener listener){
         this.data=data;
+        this.listener=listener;
     }
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         inflater=LayoutInflater.from(parent.getContext());
         View view=inflater.inflate(R.layout.image_layout,parent,false );
-        return new ImageCustomHolder(view);
+        return new ImageCustomHolder(view,listener);
     }
 
     @Override

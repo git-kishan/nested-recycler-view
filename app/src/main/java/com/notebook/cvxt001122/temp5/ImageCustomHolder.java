@@ -7,17 +7,23 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ImageCustomHolder extends RecyclerView.ViewHolder {
+public class ImageCustomHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
      ImageView image;
      TextView name;
+     ClickListener listener;
 
-
-    public ImageCustomHolder(@NonNull View itemView) {
+    public ImageCustomHolder(@NonNull View itemView,ClickListener listener) {
         super(itemView);
         image=itemView.findViewById(R.id.image);
         name=itemView.findViewById(R.id.name);
+        this.listener=listener;
+        image.setOnClickListener(this);
     }
 
-    interface
+
+    @Override
+    public void onClick(View view) {
+        listener.itemClicked(image, name.getText().toString(),getAdapterPosition() );
+    }
 }

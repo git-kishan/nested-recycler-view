@@ -12,15 +12,17 @@ import androidx.recyclerview.widget.RecyclerView;
 public class VerticalRecyclerAdapter extends RecyclerView.Adapter {
     private LayoutInflater inflater;
     private TitleModel data;
-    public VerticalRecyclerAdapter(TitleModel data){
+    ClickListener listener;
+    public VerticalRecyclerAdapter(TitleModel data,ClickListener listener){
         this.data=data;
+        this.listener=listener;
     }
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         inflater=LayoutInflater.from(parent.getContext());
         View view=inflater.inflate(R.layout.title_layout,parent,false );
-        return new TextViewHolder(view);
+        return new TextViewHolder(view,listener);
     }
 
     @Override
