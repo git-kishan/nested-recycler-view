@@ -48,7 +48,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
         else if(holder instanceof  ImageCustomHolder){
             ImageModel object=(ImageModel)data.get(position);
             ((ImageCustomHolder) holder).image.setImageResource(object.getImageId());
-            ((ImageCustomHolder) holder).name.setText(object.getName());
+            ((ImageCustomHolder) holder).name.setText(object.getName() );
         }
 
     }
